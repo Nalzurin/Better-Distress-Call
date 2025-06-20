@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Better Distress Call</name>
+    <author>Nalzurin</author>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+	<packageId>Nalzurin.BetterDistressCall</packageId>
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Anomaly</packageId>
+      <displayName>Rimworld - Anomaly</displayName>
+      <steamWorkshopUrl>https://store.steampowered.com/app/1826140/RimWorld_Anomaly/</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
+    </li>
+
+  </modDependencies>
+  <loadAfter>
+		<li>Ludeon.RimWorld.Anomaly</li>
+	</loadAfter>
+	<description>Expands upon vanilla Anomaly Distress Call quest.</description>
+</ModMetaData>

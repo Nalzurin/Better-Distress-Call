@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<!--     Options     -->
+
+<ShamblersVariant>Shamblers</ShamblersVariant>
+  <ChimerasVariant>Chimeras</ChimerasVariant>
+  <HoraxVariant>Horax</HoraxVariant>
+  <Obelisks>Spawn obelisks</Obelisks>
+  <ObeliskChance>Obelisks spawn chance</ObeliskChance>
+</LanguageData>

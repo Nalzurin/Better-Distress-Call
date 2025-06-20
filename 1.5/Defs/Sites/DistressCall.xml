@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Variant: Shambler -->
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Shamblers</defName>
+    <workerClass>BetterDistressCall.Varieties.SitePartWorker_BetterDistressCall_Shamblers</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_Settlement</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>454</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <clearBuildingFaction>true</clearBuildingFaction>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_Loot</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>455</order>
+    <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <numLootFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numLootFromPoints>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_DestroyDoors</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>456</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DestroyDoors"/>
+
+  </GenStepDef>
+  
+
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_DamageWalls</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>457</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
+
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_BurntPatches</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
+
+  <!-- Variant: Chimera -->
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Chimeras</defName>
+    <workerClass>BetterDistressCall.Varieties.SitePartWorker_BetterDistressCall_Chimeras</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_Settlement</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>454</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <clearBuildingFaction>true</clearBuildingFaction>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_Loot</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>455</order>
+    <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <numLootFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numLootFromPoints>  
+  </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_DestroyDoors</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>456</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DestroyDoors"/>
+
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_DamageWalls</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>457</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
+
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_BurntPatches</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
+
+
+  <!-- Variant: Horax Cult -->
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Horax</defName>
+    <workerClass>BetterDistressCall.Varieties.SitePartWorker_BetterDistressCall_Horax</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DistressCall_Horax_Settlement</defName>
+    <linkWithSite>DistressCall_Horax</linkWithSite>
+    <order>454</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <clearBuildingFaction>true</clearBuildingFaction>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Horax_Loot</defName>
+    <linkWithSite>DistressCall_Horax</linkWithSite>
+    <order>455</order>
+    <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <numLootFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numLootFromPoints>  
+  </genStep>
+  </GenStepDef>
+  
+  <GenStepDef>
+    <defName>DistressCall_Horax_DamageWalls</defName>
+    <linkWithSite>DistressCall_Horax</linkWithSite>
+    <order>457</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
+
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Horax_BurntPatches</defName>
+    <linkWithSite>DistressCall_Horax</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
+
+  </Defs>
