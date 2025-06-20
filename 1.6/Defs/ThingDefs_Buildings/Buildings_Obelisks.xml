@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <ThingDef ParentName="WarpedObelisk">
+    <defName>WarpedObelisk_AbductorQuest</defName>
+    <label>warped obelisk</label>
+    <graphicData>
+      <texPath>Things/Building/Obelisk_Warped/WarpedObelisk</texPath>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Obelisk">
+        <compClass>BetterDistressCall.Varieties.CompObelisk_AbductorQuest</compClass>
+        <interactionEffectCooldownDays>0</interactionEffectCooldownDays>
+      </li>
+      <li Class="CompProperties_StudyUnlocks">
+        <studyNotes>
+          <li>
+            <threshold>2</threshold>
+            <label>Obelisk study progress</label> <!-- text in this is the same as other obelisk -->
+            <text>Investigation of the obelisk has revealed some information. It is an archotechnological device that seems to interact with organic creatures at a distance. It is probably a piece of a much larger archotech structure that was destroyed or broken apart long ago. The machinery at its core is inhumanly complex and frighteningly powerful. Its purpose and method of action remain totally mysterious.\n\nIf not suppressed, its activity level will increase over time. You can't tell what will happen when the device fully activates.</text>
+          </li>
+          <li>
+            <threshold>10</threshold>
+            <label>Obelisk study complete</label>
+            <text>You've completed your investigation of the obelisk. It creates a bridge to a point in a spacetime void separated from ours along usually inaccessible spatial dimensions.\n\nThe void plane is filled with a gray labyrinthine structure of astronomical scale. Someone trapped there could return by finding the obelisk's mirror version inside the gray rooms and hallways.\n\nThe gray structures seem to have been created by an archotech superintelligence, but there's no way to know their purpose, age, or spatial limits.\n\nThe obelisk is damaged and unstable, so its energy level rises unless suppressed. If it were to fully activate, it could begin to abduct individuals at random.\n\nYou can now intentionally provoke a response from the warped obelisk.</text>
+          </li>
+        </studyNotes>
+      </li>
+      <li Class="CompProperties_ObeliskTriggerInteractor">
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>180</ticksToActivate>
+        <cooldownTicks>900000</cooldownTicks> <!-- 15 days -->
+        <onCooldownString>Teleportation cooldown</onCooldownString>
+        <activateTexPath>UI/Commands/TriggerAbductorObelisk</activateTexPath>
+        <activateLabelString>Teleport...</activateLabelString>
+        <activateDescString>Transport a willing person to a distant spatial dimension. It may be difficult for them to return.</activateDescString>
+        <guiLabelString>Choose who should do this</guiLabelString>
+        <jobString>Trigger teleportation</jobString>
+        <activatingStringPending>triggering obelisk teleportation</activatingStringPending>
+        <activatingString>triggering obelisk teleportation: {1}s</activatingString>
+        <messageCompletedString>{PAWN_nameDef} has successfully triggered obelisk teleportation.</messageCompletedString>
+        <messageCooldownEnded>The warped obelisk is ready to use again.</messageCooldownEnded>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

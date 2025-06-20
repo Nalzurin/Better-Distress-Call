@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/SitePartDef[defName="DistressCall_Fleshbeasts"]/workerClass</xpath>
+    <value>
+      <workerClass>BetterDistressCall.SitePartWorker_BetterDistressCall_Fleshbeasts</workerClass>
+    </value>
+  </Operation>
+</Patch>
