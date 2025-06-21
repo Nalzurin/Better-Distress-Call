@@ -25,4 +25,7 @@
   <GorehulksVariant>Enable Gorehulks</GorehulksVariant>
   <GorehulksSettlementPointModifier>Gorehulks settlement points modifier:</GorehulksSettlementPointModifier>
   <GorehulksPointModifier>Gorehulks point modifier:</GorehulksPointModifier>
+  <MetalhorrorsVariant>Enable Metalhorrors</MetalhorrorsVariant>
+  <MetalhorrorsSettlementPointModifier>Metalhorrors settlement points modifier:</MetalhorrorsSettlementPointModifier>
+  <MetalhorrorsPointModifier>Metalhorrors point modifier:</MetalhorrorsPointModifier>
 </LanguageData>

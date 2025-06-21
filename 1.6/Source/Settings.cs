@@ -17,6 +17,7 @@ namespace BetterDistressCall
         public static bool SightstealersVariant = true;
         public static bool DevourersVariant = true;
         public static bool GorehulksVariant = true;
+        public static bool MetalhorrorsVariant = true;
         public static bool Obelisks = true;
         public static float ObeliskChance = 0.1f;
         public static float DeathPallChance = 0.35f;
@@ -62,6 +63,13 @@ namespace BetterDistressCall
 
         public static float GorehulksPointModifier = 1f;
         private string GorehulksPointModifierBuffer;
+
+        public static float MetalhorrorsSettlementPointModifier = 1f;
+        private string MetalhorrorsSettlementPointModifierBuffer;
+
+        public static float MetalhorrorsPointModifier = 1f;
+        private string MetalhorrorsPointModifierBuffer;
+
         private Vector2 _scrollPosition;
         public override void ExposeData()
         {
@@ -88,6 +96,8 @@ namespace BetterDistressCall
             Scribe_Values.Look(ref DevourersPointModifier, "DevourersPointModifier", 1f);
             Scribe_Values.Look(ref GorehulksSettlementPointModifier, "GorehulksSettlementPointModifier", 1f);
             Scribe_Values.Look(ref GorehulksPointModifier, "GorehulksPointModifier", 1f);
+            Scribe_Values.Look(ref MetalhorrorsSettlementPointModifier, "MetalhorrorsSettlementPointModifier", 1f);
+            Scribe_Values.Look(ref MetalhorrorsPointModifier, "MetalhorrorsPointModifier", 1f);
             base.ExposeData();
         }
 
@@ -158,6 +168,14 @@ namespace BetterDistressCall
             listing_Standard.TextFieldNumeric(ref GorehulksSettlementPointModifier, ref GorehulksSettlementPointModifierBuffer, 0.1f);
             listing_Standard.Label("GorehulksPointModifier".Translate());
             listing_Standard.TextFieldNumeric(ref GorehulksPointModifier, ref GorehulksPointModifierBuffer, 0.1f);
+            listing_Standard.Gap();
+
+            // Metalhorrors
+            listing_Standard.CheckboxLabeled("MetalhorrorsVariant".Translate(), ref MetalhorrorsVariant);
+            listing_Standard.Label("MetalhorrorsSettlementPointModifier".Translate());
+            listing_Standard.TextFieldNumeric(ref MetalhorrorsSettlementPointModifier, ref MetalhorrorsSettlementPointModifierBuffer, 0.1f);
+            listing_Standard.Label("MetalhorrorsPointModifier".Translate());
+            listing_Standard.TextFieldNumeric(ref MetalhorrorsPointModifier, ref MetalhorrorsPointModifierBuffer, 0.1f);
             listing_Standard.Gap();
 
             // Obelisks

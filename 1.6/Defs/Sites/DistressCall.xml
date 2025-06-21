@@ -340,4 +340,57 @@
     <order>950</order>
     <genStep Class="GenStep_BurntPatches" />
   </GenStepDef>
+  <!-- Variant: Metalhorrors -->
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Metalhorrors</defName>
+    <workerClass>BetterDistressCall.Varieties.SitePartWorker_BetterDistressCall_Metalhorrors</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DistressCall_Metalhorrors_Settlement</defName>
+    <linkWithSite>DistressCall_Metalhorrors</linkWithSite>
+    <order>454</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <postProcessSettlementParams>
+        <clearBuildingFaction>true</clearBuildingFaction>
+      </postProcessSettlementParams>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Metalhorrors_SettlementPower</defName>
+    <linkWithSite>DistressCall_Metalhorrors</linkWithSite>
+    <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Metalhorrors_Loot</defName>
+    <linkWithSite>DistressCall_Metalhorrors</linkWithSite>
+    <order>456</order>
+    <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <numLootFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numLootFromPoints>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Metalhorrors_DamageWalls</defName>
+    <linkWithSite>DistressCall_Metalhorrors</linkWithSite>
+    <order>457</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Metalhorrors_BurntPatches</defName>
+    <linkWithSite>DistressCall_Metalhorrors</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
   </Defs>

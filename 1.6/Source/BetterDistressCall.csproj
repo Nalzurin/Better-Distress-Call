@@ -62,6 +62,7 @@
     <Compile Include="QuestTranspiler.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Settings\BetterDistressCall_Mod.cs" />
+    <Compile Include="Varieties\Metalhorrors.cs" />
     <Compile Include="Varieties\Gorehulks.cs" />
     <Compile Include="Varieties\Devourers.cs" />
     <Compile Include="Varieties\Sightstealers.cs" />
