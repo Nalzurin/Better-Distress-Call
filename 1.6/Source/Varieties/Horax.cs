@@ -34,7 +34,7 @@ namespace BetterDistressCall.Varieties
             {
                 faction = faction,
                 groupKind = PawnGroupKindDefOf.Settlement,
-                points = SymbolResolver_Settlement.DefaultPawnsPoints.RandomInRange * 0.33f,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.HoraxSettlementPointModifier,
                 tile = map.Tile,
                 inhabitants = true,
 
@@ -60,7 +60,7 @@ namespace BetterDistressCall.Varieties
             List<Pawn> list2 = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
                 groupKind = PawnGroupKindDefOf.PsychicRitualSiege,
-                points = site.ActualThreatPoints * 0.8f,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.HoraxPointModifier,
                 faction = Faction.OfHoraxCult,
                 raidStrategy = RaidStrategyDefOf.ImmediateAttack
             }).ToList();

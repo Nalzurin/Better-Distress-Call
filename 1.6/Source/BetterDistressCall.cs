@@ -42,7 +42,7 @@ namespace BetterDistressCall
             {
                 faction = faction,
                 groupKind = PawnGroupKindDefOf.Settlement,
-                points = SymbolResolver_Settlement.DefaultPawnsPoints.RandomInRange * 0.33f,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.FleshbeastsSettlementPointModifier,
                 tile = map.Tile,
                 inhabitants = true,
 
@@ -58,7 +58,7 @@ namespace BetterDistressCall
             List<Pawn> list2 = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
                 groupKind = PawnGroupKindDefOf.Fleshbeasts,
-                points = site.ActualThreatPoints,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.FleshbeastsPointModifier,
                 faction = Faction.OfEntities,
                 raidStrategy = RaidStrategyDefOf.ImmediateAttack
             }).ToList();

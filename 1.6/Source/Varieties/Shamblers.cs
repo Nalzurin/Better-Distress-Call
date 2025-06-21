@@ -42,7 +42,7 @@ namespace BetterDistressCall.Varieties
             {
                 faction = faction,
                 groupKind = PawnGroupKindDefOf.Settlement,
-                points = SymbolResolver_Settlement.DefaultPawnsPoints.RandomInRange * 0.33f,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.ShamblersSettlementPointModifier,
                 tile = map.Tile,
                 inhabitants = true,
                 
@@ -65,7 +65,7 @@ namespace BetterDistressCall.Varieties
             List<Pawn> list2 = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
                 groupKind = PawnGroupKindDefOf.Shamblers,
-                points = site.ActualThreatPoints * 1.5f,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.ShamblersPointModifier,
                 faction = Faction.OfEntities,
                 raidStrategy = RaidStrategyDefOf.ImmediateAttack
             }).ToList();
@@ -160,11 +160,14 @@ namespace BetterDistressCall.Varieties
                     allThing.SetFaction(null);
                 }
             }
- 
-
-            GameCondition cond = GameConditionMaker.MakeConditionPermanent(GameConditionDefOf.DeathPall);
-            map.gameConditionManager.RegisterCondition(cond);
-            EnterSendLetter.SendLetter(stage.ToString(), "Shambler", faction, Obelisk);
+            bool deathPall = Rand.Chance(BetterDistressCall_Settings.DeathPallChance);
+            if (deathPall)
+            {
+                GameCondition cond = GameConditionMaker.MakeConditionPermanent(GameConditionDefOf.DeathPall);
+                map.gameConditionManager.RegisterCondition(cond);
+            }
+            string letterKey = deathPall ? "ShamblerPall" : "ShamblerNoPall"; 
+            EnterSendLetter.SendLetter(stage.ToString(), letterKey, faction, Obelisk);
 
         }
 

@@ -18,7 +18,7 @@ namespace BetterDistressCall
             TaggedString stageLevelText = ("BDC_" + faction.def.techLevel.ToString() + "Stage"+ stage).Translate();
             TaggedString anomalyText = ("BDC_" + anomaly).Translate();
             TaggedString obeliskText = obelisk.NullOrEmpty() ? "" : ("BDC_" + obelisk).Translate();
-            TaggedString letterText = anomalyText + "\n" + stageLevelText + "\n" + obeliskText;
+            TaggedString letterText = anomalyText + stageLevelText + obeliskText;
             DiaNode diaNode = new DiaNode(letterText);
             DiaOption item = new DiaOption("Close".Translate())
             {

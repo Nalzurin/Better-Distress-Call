@@ -14,7 +14,7 @@ using Verse.AI.Group;
 
 namespace BetterDistressCall.Varieties
 {
-    public class SitePartWorker_BetterDistressCall_Chimeras : SitePartWorker_DistressCall
+    public class SitePartWorker_BetterDistressCall_Sightstealers : SitePartWorker_DistressCall
     {
 
 
@@ -34,12 +34,13 @@ namespace BetterDistressCall.Varieties
             {
                 faction = faction,
                 groupKind = PawnGroupKindDefOf.Settlement,
-                points = site.ActualThreatPoints * BetterDistressCall_Settings.ChimerasSettlementPointModifier,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.SightstealersSettlementPointModifier,
                 tile = map.Tile,
                 inhabitants = true,
 
 
             }).ToList();
+
             bool biotech = ModLister.CheckBiotech("Biotech");
             if (biotech)
             {
@@ -47,10 +48,10 @@ namespace BetterDistressCall.Varieties
 
             }
 
-            float num = Faction.OfEntities.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Chimeras) * 1.05f;
-            List<Pawn> Chimeras = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
+            float num = Faction.OfEntities.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Sightstealers) * 1.05f;
+            List<Pawn> Sightstealers = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
-                groupKind = PawnGroupKindDefOf.Chimeras,
+                groupKind = PawnGroupKindDefOf.Sightstealers,
                 points = Rand.Range(num, site.ActualThreatPoints * 0.33f),
                 faction = Faction.OfEntities,
                 raidStrategy = RaidStrategyDefOf.ImmediateAttack
@@ -59,24 +60,24 @@ namespace BetterDistressCall.Varieties
 
             List<Pawn> list2 = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
-                groupKind = PawnGroupKindDefOf.Chimeras,
-                points = site.ActualThreatPoints * BetterDistressCall_Settings.ChimerasPointModifier,
+                groupKind = PawnGroupKindDefOf.Sightstealers,
+                points = site.ActualThreatPoints * BetterDistressCall_Settings.SightstealersPointModifier,
                 faction = Faction.OfEntities,
                 raidStrategy = RaidStrategyDefOf.ImmediateAttack
             }).ToList();
-            Lord lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_ChimeraAssault(), map, list2.Concat(Chimeras));
+            Lord lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_ChimeraAssault(), map, list2.Concat(Sightstealers));
             
             string Obelisk = ObeliskSpawnUtility.TrySpawnRandomObelisk(map, list, site.ActualThreatPoints);
             int stage;
             if (ticks < 30000)
             {
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 10);
-                DistressCallUtility.SpawnPawns(map, Chimeras.Concat(list2), map.Center, 20);
+                DistressCallUtility.SpawnPawns(map, Sightstealers.Concat(list2), map.Center, 20);
                 if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
                 {
                     lordJob_ChimeraAssault.SwitchMode();
                 }
-                Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Chimeras).ToList()), 0.4f, false), map, list);
+                Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Sightstealers).ToList()), 0.4f, false), map, list);
                 stage = 1;
             }
             else if (ticks < 60000)
@@ -87,16 +88,16 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, Chimeras.Concat(list2).ToList());
+                WoundPawns(woundedPawns, Sightstealers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, Chimeras, list, map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, Sightstealers, list, map.Center, 20);
                 if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
                 {
                     lordJob_ChimeraAssault.SwitchMode();
                 }
-                Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Chimeras).ToList()), 1, false), map, list);
+                Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Sightstealers).ToList()), 1, false), map, list);
                 stage = 2;
 
             }
@@ -114,12 +115,12 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, Chimeras.Concat(list2).ToList());
+                WoundPawns(woundedPawns, Sightstealers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, deadPawns, Chimeras.Concat(list2), map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, deadPawns, Sightstealers.Concat(list2), map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, Chimeras, list, map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, Sightstealers, list, map.Center, 20);
                 if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
                 {
                     lordJob_ChimeraAssault.SwitchMode();
@@ -134,17 +135,17 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, Chimeras.Concat(list2).ToList());
+                WoundPawns(woundedPawns, Sightstealers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, list, Chimeras.Concat(list2), map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, list, Sightstealers.Concat(list2), map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, Chimeras, list, map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, Sightstealers, list, map.Center, 20);
                 stage = 4;
             }
             else
             {
-                DistressCallUtility.SpawnCorpses(map, list, Chimeras.Concat(list2), map.Center, 20);
-                DistressCallUtility.SpawnCorpses(map, Chimeras, list, map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, list, Sightstealers.Concat(list2), map.Center, 20);
+                DistressCallUtility.SpawnCorpses(map, Sightstealers, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
                 stage = 5;
             }
@@ -168,7 +169,7 @@ namespace BetterDistressCall.Varieties
 
             }
 
-            EnterSendLetter.SendLetter(stage.ToString(), "Chimera", faction, Obelisk);
+            EnterSendLetter.SendLetter(stage.ToString(), "Sightstealer", faction, Obelisk);
 
         }
 

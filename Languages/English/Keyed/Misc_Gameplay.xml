@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-
-<!--     Options     -->
-
-<ShamblersVariant>Shamblers</ShamblersVariant>
-  <ChimerasVariant>Chimeras</ChimerasVariant>
-  <HoraxVariant>Horax</HoraxVariant>
-  <Obelisks>Spawn obelisks</Obelisks>
-  <ObeliskChance>Obelisks spawn chance</ObeliskChance>
+  <!--     Options     -->
+  <ShamblersVariant>Enable Shamblers</ShamblersVariant>
+  <ShamblersSettlementPointModifier>Shamblers settlement points modifier:</ShamblersSettlementPointModifier>
+  <ShamblersPointModifier>Shamblers point modifier:</ShamblersPointModifier>
+  <ChimerasVariant>Enable Chimeras</ChimerasVariant>
+  <ChimerasSettlementPointModifier>Chimeras settlement points modifier:</ChimerasSettlementPointModifier>
+  <ChimerasPointModifier>Chimeras point modifier:</ChimerasPointModifier>
+  <HoraxVariant>Enable Horax</HoraxVariant>
+  <HoraxSettlementPointModifier>Horax settlement points modifier:</HoraxSettlementPointModifier>
+  <HoraxPointModifier>Horax point modifier:</HoraxPointModifier>
+  <SightstealersVariant>Enable Sightstealers</SightstealersVariant>
+  <SightstealersSettlementPointModifier>Sightstealers settlement points modifier:</SightstealersSettlementPointModifier>
+  <SightstealersPointModifier>Sightstealers point modifier:</SightstealersPointModifier>
+  <Obelisks>Enable obelisks</Obelisks>
+  <ObeliskChance>Chance for an obelisk to appear</ObeliskChance>
+  <DeathPallChance>Chance of Death Pall event</DeathPallChance>
+  <Fleshbeasts>Fleshbeasts</Fleshbeasts>
+  <FleshbeastsSettlementPointModifier>Fleshbeasts settlement points modifier:</FleshbeastsSettlementPointModifier>
+  <FleshbeastsPointModifier>Fleshbeasts point modifier:</FleshbeastsPointModifier>
 </LanguageData>

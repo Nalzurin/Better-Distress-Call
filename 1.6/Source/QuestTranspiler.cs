@@ -25,16 +25,17 @@ namespace BetterDistressCall
                     return BetterDistressCall_Settings.ChimerasVariant;
                 case "DistressCall_Horax":
                     return BetterDistressCall_Settings.HoraxVariant;
-
+                case "DistressCall_Sightstealers":
+                    return BetterDistressCall_Settings.SightstealersVariant;
                 default:
                     return true;
             }
         }
-        private static MethodBase TargetMethod()
+        public static MethodBase TargetMethod()
         {
             return AccessTools.Method(AccessTools.Inner(typeof(QuestNode_Root_DistressCall), "<>c"), "<RunInt>b__13_0");
         }
-        private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions, ILGenerator il)
         {
             bool foundBreak = false;
             bool insert = false;
