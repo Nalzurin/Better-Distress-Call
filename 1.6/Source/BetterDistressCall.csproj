@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BetterDistressCall.cs" />
+    <Compile Include="BetterDistressCallHelper.cs" />
     <Compile Include="DefOfs.cs" />
     <Compile Include="EnterSendLetter.cs" />
     <Compile Include="GenStep_DistressCall_Loot.cs" />

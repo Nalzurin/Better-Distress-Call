@@ -51,7 +51,7 @@ namespace BetterDistressCall.Varieties
             bool biotech = ModLister.CheckBiotech("Biotech");
             if (biotech)
             {
-                list.ForEach((pawn) => { if (Rand.Chance(0.05f)) { pawn = GenChild(faction, map); } });
+                list.ForEach((pawn) => { if (Rand.Chance(0.05f)) { pawn = BetterDistressCallHelper.GenChild(faction, map); } });
 
             }
             float num = Faction.OfEntities.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Shamblers) * 1.05f;
@@ -87,7 +87,7 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
@@ -111,7 +111,7 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, deadPawns, shamblers.Concat(list2), map.Center, 20);
@@ -128,7 +128,7 @@ namespace BetterDistressCall.Varieties
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, shamblers.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, list, shamblers.Concat(list2), map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
@@ -171,19 +171,6 @@ namespace BetterDistressCall.Varieties
 
         }
 
-        private Pawn GenChild(Faction faction, Map map)
-        {
-            PawnGenerationRequest request = new PawnGenerationRequest(tile: map.Tile, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: true, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 0.1f, kind: PawnKindDefOf.Villager, faction: faction, context: PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, allowDead: false, allowDowned: true, canGeneratePawnRelations: true, biocodeApparelChance: 1f, validatorPreGear: null, validatorPostGear: null,minChanceToRedressWorldPawn: null, fixedBiologicalAge: null, fixedChronologicalAge: null, fixedLastName: null, fixedBirthName: null, fixedTitle: null, fixedIdeo: null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, forcedXenogenes: null, forcedEndogenes: null, forcedXenotype: null, forcedCustomXenotype: null, allowedXenotypes: null, forceBaselinerChance: 0f, developmentalStages: DevelopmentalStage.Child);
-            
-            return PawnGenerator.GeneratePawn(request);
-        }
-        private void WoundPawns(List<Pawn> pawns, List<Pawn> attackers)
-        {
-            foreach (Pawn pawn in pawns)
-            {
-                HealthUtility.DamageUntilDowned(pawn, Rand.Bool, null, attackers.RandomElement().def, null);
-            }
-        }
 
 
     }
