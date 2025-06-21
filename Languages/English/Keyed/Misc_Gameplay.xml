@@ -19,4 +19,7 @@
   <Fleshbeasts>Fleshbeasts</Fleshbeasts>
   <FleshbeastsSettlementPointModifier>Fleshbeasts settlement points modifier:</FleshbeastsSettlementPointModifier>
   <FleshbeastsPointModifier>Fleshbeasts point modifier:</FleshbeastsPointModifier>
+  <DevourersVariant>Enable Devourers</DevourersVariant>
+  <DevourersSettlementPointModifier>Devourers settlement points modifier:</DevourersSettlementPointModifier>
+  <DevourersPointModifier>Devourers point modifier:</DevourersPointModifier>
 </LanguageData>

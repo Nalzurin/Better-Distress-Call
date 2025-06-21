@@ -15,7 +15,7 @@ namespace BetterDistressCall
         public static bool ChimerasVariant = true;
         public static bool HoraxVariant = true;
         public static bool SightstealersVariant = true;
-
+        public static bool DevourersVariant = true;
         public static bool Obelisks = true;
         public static float ObeliskChance = 0.1f;
         public static float DeathPallChance = 0.35f;
@@ -44,6 +44,11 @@ namespace BetterDistressCall
         public static float SightstealersPointModifier = 1f;
         private string SightstealersPointModifierBuffer;
 
+        public static float DevourersSettlementPointModifier = 1f;
+        private string DevourersSettlementPointModifierBuffer;
+
+        public static float DevourersPointModifier = 1f;
+        private string DevourersPointModifierBuffer;
 
         public static float FleshbeastsSettlementPointModifier = 1f;
         private string FleshbeastsSettlementPointModifierBuffer;
@@ -72,14 +77,15 @@ namespace BetterDistressCall
             Scribe_Values.Look(ref SightstealersPointModifier, "SightstealersPointModifier", 1f);
             Scribe_Values.Look(ref FleshbeastsSettlementPointModifier, "FleshbeastsSettlementPointModifier", 1f);
             Scribe_Values.Look(ref FleshbeastsPointModifier, "FleshbeastsPointModifier", 1f);
-
+            Scribe_Values.Look(ref DevourersSettlementPointModifier, "DevourersSettlementPointModifier", 1f);
+            Scribe_Values.Look(ref DevourersPointModifier, "DevourersPointModifier", 1f);
             base.ExposeData();
         }
 
         public void DoWindowContents(Rect inRect)
         {
             Rect rect2 = new Rect(inRect);
-            rect2.height = 750f;
+            rect2.height = 2000f;
             Rect rect3 = rect2;
             Widgets.AdjustRectsForScrollView(inRect, ref rect2, ref rect3);
             Widgets.BeginScrollView(inRect, ref _scrollPosition, rect3, showScrollbars: false);
@@ -127,6 +133,14 @@ namespace BetterDistressCall
             listing_Standard.TextFieldNumeric(ref SightstealersSettlementPointModifier, ref SightstealersSettlementPointModifierBuffer, 0.1f);
             listing_Standard.Label("SightstealersPointModifier".Translate());
             listing_Standard.TextFieldNumeric(ref SightstealersPointModifier, ref SightstealersPointModifierBuffer, 0.1f);
+            listing_Standard.Gap();
+
+            // Devourers
+            listing_Standard.CheckboxLabeled("DevourersVariant".Translate(), ref DevourersVariant);
+            listing_Standard.Label("DevourersSettlementPointModifier".Translate());
+            listing_Standard.TextFieldNumeric(ref DevourersSettlementPointModifier, ref DevourersSettlementPointModifierBuffer, 0.1f);
+            listing_Standard.Label("DevourersPointModifier".Translate());
+            listing_Standard.TextFieldNumeric(ref DevourersPointModifier, ref DevourersPointModifierBuffer, 0.1f);
             listing_Standard.Gap();
 
             // Obelisks

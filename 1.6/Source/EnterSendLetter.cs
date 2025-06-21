@@ -19,6 +19,10 @@ namespace BetterDistressCall
             TaggedString anomalyText = ("BDC_" + anomaly).Translate();
             TaggedString obeliskText = obelisk.NullOrEmpty() ? "" : ("BDC_" + obelisk).Translate();
             TaggedString letterText = anomalyText + "\n" + stageLevelText + "\n" + obeliskText;
+            if (LanguageDatabase.activeLanguage.TryGetTextFromKey("BDC_" + faction.def.defName, out TaggedString factionText))
+            {
+                letterText += "\n" + factionText;
+            }
             DiaNode diaNode = new DiaNode(letterText);
             DiaOption item = new DiaOption("Close".Translate())
             {

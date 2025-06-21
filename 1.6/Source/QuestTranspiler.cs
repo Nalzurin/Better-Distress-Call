@@ -27,6 +27,8 @@ namespace BetterDistressCall
                     return BetterDistressCall_Settings.HoraxVariant;
                 case "DistressCall_Sightstealers":
                     return BetterDistressCall_Settings.SightstealersVariant;
+                case "DistressCall_Devourers":
+                    return BetterDistressCall_Settings.DevourersVariant;
                 default:
                     return true;
             }
