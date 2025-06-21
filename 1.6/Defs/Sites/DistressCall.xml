@@ -20,9 +20,15 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>DistressCall_Shamblers_Loot</defName>
+    <defName>SettlementPower</defName>
     <linkWithSite>DistressCall_Shamblers</linkWithSite>
     <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Shamblers_Loot</defName>
+    <linkWithSite>DistressCall_Shamblers</linkWithSite>
+    <order>456</order>
     <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
       <forceAtLeastOneShard>true</forceAtLeastOneShard>
       <numLootFromPoints>
@@ -38,7 +44,7 @@
   <GenStepDef>
     <defName>DistressCall_Shamblers_DestroyDoors</defName>
     <linkWithSite>DistressCall_Shamblers</linkWithSite>
-    <order>456</order>
+    <order>457</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DestroyDoors"/>
 
   </GenStepDef>
@@ -47,7 +53,7 @@
   <GenStepDef>
     <defName>DistressCall_Shamblers_DamageWalls</defName>
     <linkWithSite>DistressCall_Shamblers</linkWithSite>
-    <order>457</order>
+    <order>458</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
 
   </GenStepDef>
@@ -78,9 +84,15 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>DistressCall_Chimeras_Loot</defName>
+    <defName>SettlementPower</defName>
     <linkWithSite>DistressCall_Chimeras</linkWithSite>
     <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Chimeras_Loot</defName>
+    <linkWithSite>DistressCall_Chimeras</linkWithSite>
+    <order>456</order>
     <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
       <forceAtLeastOneShard>true</forceAtLeastOneShard>
       <numLootFromPoints>
@@ -96,16 +108,14 @@
   <GenStepDef>
     <defName>DistressCall_Chimeras_DestroyDoors</defName>
     <linkWithSite>DistressCall_Chimeras</linkWithSite>
-    <order>456</order>
+    <order>457</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DestroyDoors"/>
-
   </GenStepDef>
   <GenStepDef>
     <defName>DistressCall_Chimeras_DamageWalls</defName>
     <linkWithSite>DistressCall_Chimeras</linkWithSite>
-    <order>457</order>
+    <order>458</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
-
   </GenStepDef>
   <GenStepDef>
     <defName>DistressCall_Chimeras_BurntPatches</defName>
@@ -135,9 +145,15 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>DistressCall_Horax_Loot</defName>
+    <defName>SettlementPower</defName>
     <linkWithSite>DistressCall_Horax</linkWithSite>
     <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Horax_Loot</defName>
+    <linkWithSite>DistressCall_Horax</linkWithSite>
+    <order>456</order>
     <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
       <forceAtLeastOneShard>true</forceAtLeastOneShard>
       <numLootFromPoints>
@@ -150,13 +166,11 @@
       </numLootFromPoints>  
   </genStep>
   </GenStepDef>
-  
   <GenStepDef>
     <defName>DistressCall_Horax_DamageWalls</defName>
     <linkWithSite>DistressCall_Horax</linkWithSite>
     <order>457</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
-
   </GenStepDef>
   <GenStepDef>
     <defName>DistressCall_Horax_BurntPatches</defName>
@@ -185,9 +199,15 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>DistressCall_Sightstealers_Loot</defName>
+    <defName>SettlementPower</defName>
     <linkWithSite>DistressCall_Sightstealers</linkWithSite>
     <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Sightstealers_Loot</defName>
+    <linkWithSite>DistressCall_Sightstealers</linkWithSite>
+    <order>456</order>
     <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
       <forceAtLeastOneShard>true</forceAtLeastOneShard>
       <numLootFromPoints>
@@ -200,13 +220,11 @@
       </numLootFromPoints>  
   </genStep>
   </GenStepDef>
-  
   <GenStepDef>
     <defName>DistressCall_Sightstealers_DamageWalls</defName>
     <linkWithSite>DistressCall_Sightstealers</linkWithSite>
     <order>457</order>
     <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
-
   </GenStepDef>
   <GenStepDef>
     <defName>DistressCall_Sightstealers_BurntPatches</defName>
