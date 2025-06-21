@@ -22,4 +22,7 @@
   <DevourersVariant>Enable Devourers</DevourersVariant>
   <DevourersSettlementPointModifier>Devourers settlement points modifier:</DevourersSettlementPointModifier>
   <DevourersPointModifier>Devourers point modifier:</DevourersPointModifier>
+  <GorehulksVariant>Enable Gorehulks</GorehulksVariant>
+  <GorehulksSettlementPointModifier>Gorehulks settlement points modifier:</GorehulksSettlementPointModifier>
+  <GorehulksPointModifier>Gorehulks point modifier:</GorehulksPointModifier>
 </LanguageData>

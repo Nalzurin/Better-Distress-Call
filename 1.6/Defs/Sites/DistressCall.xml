@@ -20,7 +20,7 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>SettlementPower</defName>
+    <defName>DistressCall_Shamblers_SettlementPower</defName>
     <linkWithSite>DistressCall_Shamblers</linkWithSite>
     <order>455</order>
     <genStep Class="GenStep_Power" />
@@ -84,7 +84,7 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>SettlementPower</defName>
+    <defName>DistressCall_Chimeras_SettlementPower</defName>
     <linkWithSite>DistressCall_Chimeras</linkWithSite>
     <order>455</order>
     <genStep Class="GenStep_Power" />
@@ -145,7 +145,7 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>SettlementPower</defName>
+    <defName>DistressCall_Horax_SettlementPower</defName>
     <linkWithSite>DistressCall_Horax</linkWithSite>
     <order>455</order>
     <genStep Class="GenStep_Power" />
@@ -199,7 +199,7 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>SettlementPower</defName>
+    <defName>DistressCall_Sightstealers_SettlementPower</defName>
     <linkWithSite>DistressCall_Sightstealers</linkWithSite>
     <order>455</order>
     <genStep Class="GenStep_Power" />
@@ -253,7 +253,7 @@
     </genStep>
   </GenStepDef>
   <GenStepDef>
-    <defName>SettlementPower</defName>
+    <defName>DistressCall_Devourers_SettlementPower</defName>
     <linkWithSite>DistressCall_Devourers</linkWithSite>
     <order>455</order>
     <genStep Class="GenStep_Power" />
@@ -283,6 +283,60 @@
   <GenStepDef>
     <defName>DistressCall_Devourers_BurntPatches</defName>
     <linkWithSite>DistressCall_Devourers</linkWithSite>
+    <order>950</order>
+    <genStep Class="GenStep_BurntPatches" />
+  </GenStepDef>
+
+  <!-- Variant: Gorehulks -->
+  <SitePartDef ParentName="DistressCallBase">
+    <defName>DistressCall_Gorehulks</defName>
+    <workerClass>BetterDistressCall.Varieties.SitePartWorker_BetterDistressCall_Gorehulks</workerClass>
+    <selectionWeight>4</selectionWeight>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>DistressCall_Gorehulks_Settlement</defName>
+    <linkWithSite>DistressCall_Gorehulks</linkWithSite>
+    <order>454</order>
+    <genStep Class="GenStep_Settlement">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+      <generatePawns>false</generatePawns>
+      <postProcessSettlementParams>
+        <clearBuildingFaction>true</clearBuildingFaction>
+      </postProcessSettlementParams>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Gorehulks_SettlementPower</defName>
+    <linkWithSite>DistressCall_Gorehulks</linkWithSite>
+    <order>455</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Gorehulks_Loot</defName>
+    <linkWithSite>DistressCall_Gorehulks</linkWithSite>
+    <order>456</order>
+    <genStep Class="BetterDistressCall.GenStep_DistressCall_Loot">
+      <forceAtLeastOneShard>true</forceAtLeastOneShard>
+      <numLootFromPoints>
+        <points>
+          <li>(0, 1)</li>
+          <li>(500, 2)</li>
+          <li>(1500, 3)</li>
+          <li>(2000, 4)</li>
+        </points>
+      </numLootFromPoints>
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Gorehulks_DamageWalls</defName>
+    <linkWithSite>DistressCall_Gorehulks</linkWithSite>
+    <order>457</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_DamageWalls"/>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>DistressCall_Gorehulks_BurntPatches</defName>
+    <linkWithSite>DistressCall_Gorehulks</linkWithSite>
     <order>950</order>
     <genStep Class="GenStep_BurntPatches" />
   </GenStepDef>
