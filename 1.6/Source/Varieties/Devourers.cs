@@ -16,13 +16,6 @@ namespace BetterDistressCall.Varieties
 {
     public class SitePartWorker_BetterDistressCall_Devourers : SitePartWorker_DistressCall
     {
-
-
-        private const float CorpsePointFactor = 0.33f;
-
-        private const int SpawnRadius = 20;
-        private bool makeMutations = false;
-        private int mutationCount = 0;
         public override void PostMapGenerate(Map map)
         {
             Site site = map.Parent as Site;

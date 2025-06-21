@@ -15,24 +15,7 @@ namespace BetterDistressCall
 
     public class SitePartWorker_BetterDistressCall_Fleshbeasts : SitePartWorker_DistressCall
     {
-
-        private const float CorpsePointFactor = 0.33f;
-
-        private const int SpawnRadius = 20;
-
-        private static readonly SimpleCurve FleshbeastsPointsModifierCurve = new SimpleCurve
-    {
-        new CurvePoint(100f, 100f),
-        new CurvePoint(500f, 250f),
-        new CurvePoint(1000f, 400f),
-        new CurvePoint(5000f, 800f)
-    };
-
-        private const float ChanceForFleshbeastCorpsesAroundBurrow = 0.4f;
-
         private static readonly IntRange BurrowCorpseCountRange = new IntRange(1, 2);
-        private bool makeMutations = false;
-        private int mutationCount = 0;
         public override void PostMapGenerate(Map map)
         {
             Site site = map.Parent as Site;
@@ -82,7 +65,7 @@ namespace BetterDistressCall
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
@@ -106,7 +89,7 @@ namespace BetterDistressCall
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, deadPawns, fleshbeasts.Concat(list2), map.Center, 20);
@@ -123,7 +106,7 @@ namespace BetterDistressCall
                     woundedPawns.Add(list.Last());
                     list.RemoveLast();
                 }
-                WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
+                BetterDistressCallHelper.WoundPawns(woundedPawns, fleshbeasts.Concat(list2).ToList());
                 DistressCallUtility.SpawnPawns(map, woundedPawns, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, list, fleshbeasts.Concat(list2), map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
@@ -158,19 +141,6 @@ namespace BetterDistressCall
             }
             EnterSendLetter.SendLetter(stage.ToString(), "Fleshbeast", faction, Obelisk);
 
-        }
-        private Pawn GenChild(Faction faction, Map map)
-        {
-            PawnGenerationRequest request = new PawnGenerationRequest(tile: map.Tile, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: true, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 0.1f, kind: PawnKindDefOf.Villager, faction: faction, context: PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, allowDead: false, allowDowned: true, canGeneratePawnRelations: true, biocodeApparelChance: 1f, validatorPreGear: null, validatorPostGear: null, minChanceToRedressWorldPawn: null, fixedBiologicalAge: null, fixedChronologicalAge: null, fixedLastName: null, fixedBirthName: null, fixedTitle: null, fixedIdeo: null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, forcedXenogenes: null, forcedEndogenes: null, forcedXenotype: null, forcedCustomXenotype: null, allowedXenotypes: null, forceBaselinerChance: 0f, developmentalStages: DevelopmentalStage.Child);
-
-            return PawnGenerator.GeneratePawn(request);
-        }
-        private void WoundPawns(List<Pawn> pawns, List<Pawn> attackers)
-        {
-            foreach (Pawn pawn in pawns)
-            {
-                HealthUtility.DamageUntilDowned(pawn, Rand.Bool, null, attackers.RandomElement().def, null);
-            }
         }
         private void ScatterCorpsesAroundPitBurrows(Map map, IEnumerable<Pawn> killers)
         {

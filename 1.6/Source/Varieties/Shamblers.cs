@@ -16,21 +16,6 @@ namespace BetterDistressCall.Varieties
 {
     public class SitePartWorker_BetterDistressCall_Shamblers : SitePartWorker_DistressCall
     {
-
-
-        private const float CorpsePointFactor = 0.33f;
-
-        private const int SpawnRadius = 20;
-
-        private static readonly SimpleCurve ShamblersPointsModifierCurve = new SimpleCurve
-    {
-        new CurvePoint(100f, 100f),
-        new CurvePoint(500f, 250f),
-        new CurvePoint(1000f, 400f),
-        new CurvePoint(5000f, 800f)
-    };
-        private bool makeMutations = false;
-        private int mutationCount = 0;
         public override void PostMapGenerate(Map map)
         {
             Site site = map.Parent as Site;
