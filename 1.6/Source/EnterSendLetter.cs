@@ -15,10 +15,14 @@ namespace BetterDistressCall
         public static void SendLetter(string stage, string anomaly, Faction faction, string obelisk = null)
         {
             TaggedString titleText = "BDC_LetterTitle".Translate();
-            TaggedString stageLevelText = ("BDC_" + faction.def.techLevel.ToString() + "Stage"+ stage).Translate();
+            TaggedString stageLevelText = ("BDC_" + faction.def.techLevel.ToString() + "Stage" + stage).Translate();
             TaggedString anomalyText = ("BDC_" + anomaly).Translate();
-            TaggedString obeliskText = obelisk.NullOrEmpty() ? "" : ("BDC_" + obelisk).Translate();
-            TaggedString letterText = anomalyText + "\n" + stageLevelText + "\n" + obeliskText;
+            TaggedString letterText = anomalyText + "\n" + stageLevelText;
+            if (!obelisk.NullOrEmpty())
+            {
+                TaggedString obeliskText = obelisk.NullOrEmpty() ? "" : ("BDC_" + obelisk).Translate();
+                letterText += "\n" + obeliskText;
+            }
             if (LanguageDatabase.activeLanguage.TryGetTextFromKey("BDC_" + faction.def.defName, out TaggedString factionText))
             {
                 letterText += "\n" + factionText;
