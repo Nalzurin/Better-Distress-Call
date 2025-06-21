@@ -21,7 +21,7 @@ namespace BetterDistressCall
         public static bool Obelisks = true;
         public static float ObeliskChance = 0.1f;
         public static float DeathPallChance = 0.35f;
-
+        public static float ChanceOfSurvivorBeingAChild = 0.05f;
         public static float ShamblersSettlementPointModifier = 1f;
         private string ShamblersSettlementPointModifierBuffer;
 
@@ -98,6 +98,7 @@ namespace BetterDistressCall
             Scribe_Values.Look(ref GorehulksPointModifier, "GorehulksPointModifier", 1f);
             Scribe_Values.Look(ref MetalhorrorsSettlementPointModifier, "MetalhorrorsSettlementPointModifier", 1f);
             Scribe_Values.Look(ref MetalhorrorsPointModifier, "MetalhorrorsPointModifier", 1f);
+            Scribe_Values.Look(ref ChanceOfSurvivorBeingAChild, "ChanceOfSurvivorBeingAChild", 0.05f);
             base.ExposeData();
         }
 
@@ -182,6 +183,12 @@ namespace BetterDistressCall
             listing_Standard.CheckboxLabeled("Obelisks".Translate(), ref Obelisks);
             listing_Standard.Label("ObeliskChance".Translate() + ": " + (ObeliskChance * 100f).ToString("F0") + "%");
             ObeliskChance = (float)Math.Round(listing_Standard.Slider(ObeliskChance, 0f, 1f), 2);
+
+            if (ModLister.CheckBiotech("Biotech"))
+            {
+                listing_Standard.Label("ChanceOfSurvivorBeingAChild".Translate() + ": " + (ChanceOfSurvivorBeingAChild * 100f).ToString("F0") + "%");
+                ChanceOfSurvivorBeingAChild = (float)Math.Round(listing_Standard.Slider(ChanceOfSurvivorBeingAChild, 0f, 1f), 2);
+            }
 
             listing_Standard.End();
             Widgets.EndScrollView();

@@ -36,7 +36,7 @@ namespace BetterDistressCall.Varieties
             bool biotech = ModLister.CheckBiotech("Biotech");
             if (biotech)
             {
-                list.ForEach((pawn) => { if (Rand.Chance(0.05f)) { pawn = BetterDistressCallHelper.GenChild(faction, map); } });
+                list.ForEach((pawn) => { if (Rand.Chance(BetterDistressCall_Settings.ChanceOfSurvivorBeingAChild)) { pawn = BetterDistressCallHelper.GenChild(faction, map); } });
 
             }
             float num = Faction.OfEntities.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Shamblers) * 1.05f;
