@@ -74,6 +74,7 @@
     <Compile Include="Varieties\Chimeras.cs" />
     <Compile Include="Varieties\ObeliskSpawnUtility.cs" />
     <Compile Include="Varieties\Shamblers.cs" />
+    <Compile Include="Varieties\SpecialLabyrinthMapComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

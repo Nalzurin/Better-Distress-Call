@@ -56,6 +56,7 @@ namespace BetterDistressCall.Varieties
             }).ToList();
 
             string Obelisk = ObeliskSpawnUtility.TrySpawnRandomObelisk(map, list, site.ActualThreatPoints);
+            Lord lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_ShamblerAssault(), map, list2.Concat(shamblers));
             int stage;
             if (ticks < 30000)
             {

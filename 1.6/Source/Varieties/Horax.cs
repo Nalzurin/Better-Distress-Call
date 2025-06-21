@@ -68,17 +68,12 @@ namespace BetterDistressCall.Varieties
                 MutantUtility.SetFreshPawnAsMutant(list2[i], MutantDefOf.Ghoul);
             }
             Lord lord = LordMaker.MakeNewLord(Faction.OfHoraxCult, new LordJob_AssaultColony(), map, list2.Concat(Cultists));
-
             string Obelisk = ObeliskSpawnUtility.TrySpawnRandomObelisk(map, list, site.ActualThreatPoints);
             int stage;
             if (ticks < 30000)
             {
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 10);
                 DistressCallUtility.SpawnPawns(map, Cultists.Concat(list2), map.Center, 20);
-                if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
-                {
-                    lordJob_ChimeraAssault.SwitchMode();
-                }
                 Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Cultists).ToList()), 0.4f, false), map, list);
                 stage = 1;
             }
@@ -95,10 +90,6 @@ namespace BetterDistressCall.Varieties
                 DistressCallUtility.SpawnPawns(map, list, map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, Cultists, list, map.Center, 20);
-                if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
-                {
-                    lordJob_ChimeraAssault.SwitchMode();
-                }
                 Lord lord2 = LordMaker.MakeNewLord(faction, new LordJob_AssaultThings(Faction.OfEntities, new List<Thing>(list2.Concat(Cultists).ToList()), 1, false), map, list);
                 stage = 2;
 
@@ -124,10 +115,6 @@ namespace BetterDistressCall.Varieties
                 DistressCallUtility.SpawnCorpses(map, deadPawns, Cultists.Concat(list2), map.Center, 20);
                 DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
                 DistressCallUtility.SpawnCorpses(map, Cultists, list, map.Center, 20);
-                if (lord.LordJob is LordJob_ChimeraAssault lordJob_ChimeraAssault)
-                {
-                    lordJob_ChimeraAssault.SwitchMode();
-                }
                 stage = 3;
 
             }

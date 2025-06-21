@@ -235,8 +235,8 @@ namespace BetterDistressCall.Varieties
             generating = true;
             LongEventHandler.QueueLongEvent(delegate
             {
-                labyrinthMap = PocketMapUtility.GeneratePocketMap(new IntVec3(90, 1, 90), MapGeneratorDefOf.Labyrinth, null, parent.MapHeld);
-                labyrinthMap.GetComponent<LabyrinthMapComponent>().abductorObelisk = (Building)parent;
+                labyrinthMap = PocketMapUtility.GeneratePocketMap(new IntVec3(90, 1, 90), Definitions.LabyrinthSpecial, null, parent.MapHeld);
+                labyrinthMap.GetComponent<SpecialLabyrinthMapComponent>().abductorObelisk = (Building)parent;
             }, "GeneratingLabyrinth", doAsynchronously: true, GameAndMapInitExceptionHandlers.ErrorWhileGeneratingMap, showExtraUIInfo: false, callback: delegate
             {
                 generating = false;

@@ -12,6 +12,6 @@ namespace BetterDistressCall
     public static class Definitions
     {
         public static ThingDef WarpedObelisk_AbductorQuest;
-
+        public static MapGeneratorDef LabyrinthSpecial;
     }
 }
