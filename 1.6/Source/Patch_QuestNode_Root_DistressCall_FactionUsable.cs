@@ -22,7 +22,7 @@ namespace BetterDistressCall
         }
         public static void Postfix(ref bool __result, Faction f, float points)
         {
-            if (!__result)
+            if (!__result && !f.def.hidden)
             {
                 if (ModsConfig.RoyaltyActive && points < 2000f && f == Faction.OfEmpire)
                 {
