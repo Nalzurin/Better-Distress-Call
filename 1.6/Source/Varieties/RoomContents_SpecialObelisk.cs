@@ -32,7 +32,7 @@ namespace BetterDistressCall.Varieties
                     }
                 }
             }
-            Building building = (Building)GenSpawn.Spawn(ThingMaker.MakeThing(ThingDefOf.WarpedObelisk_Labyrinth), cellRect.CenterCell, map);
+            Building building = (Building)GenSpawn.Spawn(ThingMaker.MakeThing(Definitions.WarpedObeliskQuest_Labyrinth), cellRect.CenterCell, map);
             map.GetComponent<SpecialLabyrinthMapComponent>().labyrinthObelisk = building;
             string signalTag = "ThingDiscovered" + Find.UniqueIDsManager.GetNextSignalTagID();
             SignalAction_Letter signalAction_Letter = (SignalAction_Letter)ThingMaker.MakeThing(ThingDefOf.SignalAction_Letter);

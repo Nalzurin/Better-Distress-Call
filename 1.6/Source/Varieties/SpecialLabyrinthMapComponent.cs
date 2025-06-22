@@ -17,6 +17,7 @@ namespace BetterDistressCall.Varieties
         private LayoutStructureSketch structureSketch;
 
         private List<LayoutRoom> spawnableRooms;
+        private Map sourceMap;
 
         private bool closing;
 
@@ -35,7 +36,7 @@ namespace BetterDistressCall.Varieties
 
         public override void MapComponentTick()
         {
-            if (!closing && GenTicks.IsTickInterval(300) && abductorObelisk.DestroyedOrNull() && !map.mapPawns.AnyColonistSpawned)
+            if (!closing && GenTicks.IsTickInterval(IntervalCheckCloseTicks) && abductorObelisk.DestroyedOrNull() && !map.mapPawns.AnyColonistSpawned)
             {
                 PocketMapUtility.DestroyPocketMap(map);
             }
@@ -48,7 +49,7 @@ namespace BetterDistressCall.Varieties
             {
                 return;
             }
-            Map dest = abductorObelisk.MapHeld;
+            Map dest = sourceMap;
             nextTeleportTick = GenTicks.TicksGame + TeleportDelayTicks.RandomInRange;
             if (dest == null || !CellFinderLoose.TryGetRandomCellWith((IntVec3 pos) => IsValidTeleportCell(pos, dest), dest, 1000, out var result))
             {
@@ -109,6 +110,7 @@ namespace BetterDistressCall.Varieties
 
         public Thing TeleportToLabyrinth(Thing thing)
         {
+            sourceMap = abductorObelisk.MapHeld;
             IntVec3 dropPosition = GetDropPosition();
             Thing thing2 = SkipUtility.SkipTo(thing, dropPosition, map);
             if (thing is Pawn pawn)

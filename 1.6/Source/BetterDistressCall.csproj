@@ -67,6 +67,7 @@
     <Compile Include="QuestTranspiler.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Settings\BetterDistressCall_Mod.cs" />
+    <Compile Include="Varieties\CompProperties_SpecialObeliskLabyrinth.cs" />
     <Compile Include="Varieties\GenStep_SpecialLabyrinth.cs" />
     <Compile Include="Varieties\LayoutWorker_SpecialLabyrinth.cs" />
     <Compile Include="Varieties\Metalhorrors.cs" />
@@ -88,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Compile Include="Varieties\CompSpecialObelisk_Labyrinth.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
