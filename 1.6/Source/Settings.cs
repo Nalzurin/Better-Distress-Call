@@ -25,31 +25,31 @@ namespace BetterDistressCall
         public static float ShamblersSettlementPointModifier = 1f;
         private string ShamblersSettlementPointModifierBuffer;
 
-        public static float ShamblersPointModifier = 1f;
+        public static float ShamblersPointModifier = 1.5f;
         private string ShamblersPointModifierBuffer;
 
         public static float ChimerasSettlementPointModifier = 1f;
         private string ChimerasSettlementPointModifierBuffer;
 
-        public static float ChimerasPointModifier = 1f;
+        public static float ChimerasPointModifier = 1.5f;
         private string ChimerasPointModifierBuffer;
 
         public static float HoraxSettlementPointModifier = 1f;
         private string HoraxSettlementPointModifierBuffer;
 
-        public static float HoraxPointModifier = 1f;
+        public static float HoraxPointModifier = 1.5f;
         private string HoraxPointModifierBuffer;
 
         public static float SightstealersSettlementPointModifier = 1f;
         private string SightstealersSettlementPointModifierBuffer;
 
-        public static float SightstealersPointModifier = 1f;
+        public static float SightstealersPointModifier = 1.5f;
         private string SightstealersPointModifierBuffer;
 
         public static float DevourersSettlementPointModifier = 1f;
         private string DevourersSettlementPointModifierBuffer;
 
-        public static float DevourersPointModifier = 1f;
+        public static float DevourersPointModifier = 1.5f;
         private string DevourersPointModifierBuffer;
 
         public static float FleshbeastsSettlementPointModifier = 1f;
@@ -61,13 +61,13 @@ namespace BetterDistressCall
         public static float GorehulksSettlementPointModifier = 1f;
         private string GorehulksSettlementPointModifierBuffer;
 
-        public static float GorehulksPointModifier = 1f;
+        public static float GorehulksPointModifier = 1.5f;
         private string GorehulksPointModifierBuffer;
 
         public static float MetalhorrorsSettlementPointModifier = 1f;
         private string MetalhorrorsSettlementPointModifierBuffer;
 
-        public static float MetalhorrorsPointModifier = 1f;
+        public static float MetalhorrorsPointModifier = 1.5f;
         private string MetalhorrorsPointModifierBuffer;
 
         private Vector2 _scrollPosition;
