@@ -5,11 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Verse;
+using static System.Collections.Specialized.BitVector32;
+using Verse.Noise;
 
 namespace BetterDistressCall
 {
     public static class BetterDistressCallHelper
     {
+        public static void ChildChance(List<Pawn> list, Faction faction, Map map)
+        {
+            if (!ModLister.CheckBiotech("Biotech"))
+            {
+                return;
+            }
+            for(int i = 0; i <  list.Count; i++)
+            {
+
+                if (Rand.Chance(BetterDistressCall_Settings.ChanceOfSurvivorBeingAChild))
+                {
+                    list[i] = GenChild(faction, map);
+                }
+            }
+
+        }
         public static Pawn GenChild(Faction faction, Map map)
         {
             PawnGenerationRequest request = new PawnGenerationRequest(tile: map.Tile, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: true, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 0.1f, kind: PawnKindDefOf.Villager, faction: faction, context: PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true, allowDead: false, allowDowned: true, canGeneratePawnRelations: true, biocodeApparelChance: 1f, validatorPreGear: null, validatorPostGear: null, minChanceToRedressWorldPawn: null, fixedBiologicalAge: null, fixedChronologicalAge: null, fixedLastName: null, fixedBirthName: null, fixedTitle: null, fixedIdeo: null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, forcedXenogenes: null, forcedEndogenes: null, forcedXenotype: null, forcedCustomXenotype: null, allowedXenotypes: null, forceBaselinerChance: 0f, developmentalStages: DevelopmentalStage.Child);
