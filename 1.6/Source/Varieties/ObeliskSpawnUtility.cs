@@ -88,7 +88,9 @@ namespace BetterDistressCall.Varieties
                         Pawn duplicate = Find.PawnDuplicator.Duplicate(original);
                         Find.PawnDuplicator.AddDuplicate(original.duplicate.duplicateOf, original);
                         Find.PawnDuplicator.AddDuplicate(duplicate.duplicate.duplicateOf, duplicate);
-                        pawns.Replace(pawns.Where((c) => { return c != original; }).RandomElement(), duplicate);
+                        Pawn replacee = pawns.Where((c) => { return c != original; }).RandomElement();
+                        PawnGenerator.RedressPawn(duplicate, new PawnGenerationRequest(PawnKindDefOf.Villager, original.Faction));
+                        pawns.Replace(replacee, duplicate);
                         return "Duplicator";
 
                     default:
