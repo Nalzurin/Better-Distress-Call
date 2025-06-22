@@ -79,7 +79,7 @@ namespace BetterDistressCall.Varieties
             PocketMapUtility.DestroyPocketMap(base.map);
             if (abductorObelisk != null)
             {
-                abductorObelisk.GetComp<CompObelisk_Abductor>().Notify_MapDestroyed();
+                abductorObelisk.GetComp<CompObelisk_AbductorQuest>().Notify_MapDestroyed();
                 if (abductorObelisk.Spawned)
                 {
                     EffecterDefOf.Skip_EntryNoDelay.Spawn(abductorObelisk.Position, abductorObelisk.Map, 2f).Cleanup();

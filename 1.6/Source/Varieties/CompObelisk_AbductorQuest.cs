@@ -33,7 +33,7 @@ namespace BetterDistressCall.Varieties
 
         private List<Pawn> teleporting = new List<Pawn>();
 
-        private LabyrinthMapComponent mapComp;
+        private SpecialLabyrinthMapComponent mapComp;
 
         private bool generating;
 
@@ -57,7 +57,7 @@ namespace BetterDistressCall.Varieties
 
         private static readonly List<Pawn> tmpRemoveEffectors = new List<Pawn>();
 
-        public LabyrinthMapComponent Labyrinth => mapComp ?? (mapComp = labyrinthMap.GetComponent<LabyrinthMapComponent>());
+        public SpecialLabyrinthMapComponent Labyrinth => mapComp ?? (mapComp = labyrinthMap.GetComponent<SpecialLabyrinthMapComponent>());
 
         public override void TriggerInteractionEffect(Pawn interactor, bool triggeredByPlayer = false)
         {

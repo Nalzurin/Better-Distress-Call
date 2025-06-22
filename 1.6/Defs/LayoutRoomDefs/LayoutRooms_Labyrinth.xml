@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <LayoutRoomDef>
+    <defName>SpecialLabyrinthObelisk</defName>
+    <roomContentsWorkerType>BetterDistressCall.Varieties.RoomContents_SpecialObelisk</roomContentsWorkerType>
+    <dontPlaceRandomly>true</dontPlaceRandomly>
+    <isValidPlayerSpawnRoom>false</isValidPlayerSpawnRoom>
+  </LayoutRoomDef>
+ 
+</Defs>

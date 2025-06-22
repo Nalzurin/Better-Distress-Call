@@ -1,9 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <MapGeneratorDef ParentName="Labyrinth">
+  <MapGeneratorDef Name="Labyrinth">
     <defName>LabyrinthSpecial</defName>
-    <customMapComponents Inherit="false">
+    <label>labyrinth</label>
+    <ignoreAreaRevealedLetter>true</ignoreAreaRevealedLetter>
+    <disableShadows>true</disableShadows>
+    <disableCallAid>true</disableCallAid>
+    <customMapComponents>
       <li>BetterDistressCall.Varieties.SpecialLabyrinthMapComponent</li>
     </customMapComponents>
+    <pocketMapProperties>
+      <biome>Labyrinth</biome>
+      <temperature>25</temperature>
+    </pocketMapProperties>
+    <genSteps>
+      <li>SpecialLabyrinth</li>
+    </genSteps>
   </MapGeneratorDef>
+
+  <GenStepDef>
+    <defName>SpecialLabyrinth</defName>
+    <order>10</order>
+    <genStep Class="BetterDistressCall.Varieties.GenStep_SpecialLabyrinth" />
+  </GenStepDef>
 </Defs>

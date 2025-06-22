@@ -13,5 +13,7 @@ namespace BetterDistressCall
     {
         public static ThingDef WarpedObelisk_AbductorQuest;
         public static MapGeneratorDef LabyrinthSpecial;
+        public static LayoutRoomDef SpecialLabyrinthObelisk;
+        public static LayoutDef SpecialLabyrinth;
     }
 }
