@@ -12,6 +12,26 @@ namespace BetterDistressCall
 {
     public static class BetterDistressCallHelper
     {
+        public static void ForbidAndSetFactionless(List<Thing> things)
+        {
+            foreach (Thing allThing in things)
+            {
+                if (allThing.def.category == ThingCategory.Item)
+                {
+                    CompForbiddable compForbiddable = allThing.TryGetComp<CompForbiddable>();
+                    if (compForbiddable != null && !compForbiddable.Forbidden)
+                    {
+                        allThing.SetForbidden(value: true, warnOnFail: false);
+
+                    }
+                }
+                if (allThing.Faction != null && allThing is not Pawn && allThing is not Building_Turret)
+                {
+                    allThing.SetFaction(null);
+                }
+
+            }
+        }
         public static void ChildChance(List<Pawn> list, Faction faction, Map map)
         {
             if (!ModLister.CheckBiotech("Biotech"))

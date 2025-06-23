@@ -126,22 +126,7 @@ namespace BetterDistressCall.Varieties
             }
             //DistressCallUtility.SpawnPawns(map, list2, map.Center, 20);
             //map.fogGrid.SetAllFogged();
-            foreach (Thing allThing in map.listerThings.AllThings)
-            {
-                if (allThing.def.category == ThingCategory.Item)
-                {
-                    CompForbiddable compForbiddable = allThing.TryGetComp<CompForbiddable>();
-                    if (compForbiddable != null && !compForbiddable.Forbidden)
-                    {
-                        allThing.SetForbidden(value: true, warnOnFail: false);
-
-                    }
-                }
-                    if (allThing.Faction != null && allThing is not Pawn)
-                {
-                    allThing.SetFaction(null);
-                }
-            }
+            BetterDistressCallHelper.ForbidAndSetFactionless(map.listerThings.AllThings);
             bool deathPall = Rand.Chance(BetterDistressCall_Settings.DeathPallChance);
             if (deathPall)
             {
