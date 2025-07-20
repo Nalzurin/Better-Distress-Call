@@ -7,6 +7,7 @@
     <li>1.6</li>
 	</supportedVersions>
 	<packageId>Nalzurin.BetterDistressCall</packageId>
+  <modIconPath IgnoreIfNoMatchingField="True">UI/Icons/ModIcon</modIconPath>
   <modDependencies>
     <li>
       <packageId>Ludeon.RimWorld.Anomaly</packageId>
@@ -19,7 +20,6 @@
       <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
       <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2009463077</steamWorkshopUrl>
     </li>
-
   </modDependencies>
   <loadAfter>
 		<li>Ludeon.RimWorld.Anomaly</li>
